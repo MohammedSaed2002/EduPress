@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses</title>
+  <link href="./assets/css/output.css" rel="stylesheet">
+
+  <style>
+    #list-view { display: flex; flex-direction: column; gap: 1.25rem; }
+    #grid-view  { display: none; }
+
+    #view-grid-radio:checked ~ section #grid-view  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    #view-grid-radio:checked ~ section #list-view  { display: none; }
+
+    #view-grid-radio:checked ~ section #btn-grid { background: #111827; color: white; }
+    #view-grid-radio:checked ~ section #btn-list  { background: transparent; color: #6b7280; }
+
+    #view-list-radio:checked ~ section #btn-list { background: #111827; color: white; }
+    #view-list-radio:checked ~ section #btn-grid  { background: transparent; color: #6b7280; }
+  </style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Navbar -->
+<header class="bg-white shadow-sm">
+
+  <div class="max-w-[1290px] mx-auto px-6">
+
+    <div class="h-[72px] flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img src="./assets/imgs/LOGO.svg" 
+             alt="EduPress Logo"
+             class="h-8 w-auto">
+      </a>
+
+      <!-- Links -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px]">
+        <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+        <a href="courses.html" class="hover:text-orange-500 transition">Courses</a>
+        <a href="Blog.html" class="hover:text-orange-500 transition">Blog</a>
+        <a href="Page.html" class="hover:text-orange-500 transition">Page</a>
+        <a href="LearnPress Add-On.html" class="hover:text-orange-500 transition">LearnPress Add-On</a>
+        <a href="Premium Theme.html" class="hover:text-orange-500 transition">Premium Theme</a>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-6">
+
+        <span class="hidden md:block hover:text-orange-500 cursor-pointer text-[15px]">
+          Login / Register
+        </span>
+
+        <!-- Search Icon -->
+        <img src="./assets/imgs/Search.svg"
+             alt="search"
+             class="w-12 h-12 cursor-pointer hover:scale-110 transition">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="max-w-[1290px] mx-auto px-6 py-6 text-sm text-gray-500">
+  Home / Courses
+</div>
+
+<input type="radio" name="view" id="view-list-radio" class="hidden" checked>
+<input type="radio" name="view" id="view-grid-radio" class="hidden">
+
+  <section class="max-w-[1290px] mx-auto px-6 py-10">
+    <div class="flex gap-8 flex-col lg:flex-row">
+
+      <!-- MAIN CONTENT -->
+      <div class="flex-1 min-w-0">
+
+        <!-- Header -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <h2 class="text-2xl font-bold text-gray-900">All Courses</h2>
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <input type="text" placeholder="Search..."
+                class="border border-gray-300 rounded-lg pl-4 pr-10 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-400 bg-white">
+                <img src="./assets/imgs/CoursesPage/search.svg"
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-60">
+            </div>
+            <div class="flex border border-gray-300 rounded-lg overflow-hidden">
+              <label for="view-grid-radio" id="btn-grid"
+                class="px-3 py-2 text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <rect x="0" y="0" width="7" height="7" rx="1"/>
+                  <rect x="9" y="0" width="7" height="7" rx="1"/>
+                  <rect x="0" y="9" width="7" height="7" rx="1"/>
+                  <rect x="9" y="9" width="7" height="7" rx="1"/>
+                </svg>
+              </label>
+              <label for="view-list-radio" id="btn-list"
+                class="px-3 py-2 bg-gray-900 text-white transition-colors cursor-pointer">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <rect x="0" y="1" width="16" height="2" rx="1"/>
+                  <rect x="0" y="6" width="16" height="2" rx="1"/>
+                  <rect x="0" y="11" width="16" height="2" rx="1"/>
+                </svg>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- LIST VIEW -->
+        <div id="list-view">
+
+          <!-- CARD L1 -->
+          <div class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/CoursesPage/1.svg" alt="Course"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+               <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span>
+            </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors duration-200">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD L2 -->
+          <div class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/CoursesPage/2.svg" alt="Course"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+                  <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span></div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors duration-200">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD L3 -->
+          <div class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/CoursesPage/3.svg" alt="Course"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+                 <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors duration-200">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD L4 -->
+          <div class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/CoursesPage/4.svg" alt="Course"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+                  <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors duration-200">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD L5 -->
+          <div class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/CoursesPage/5.svg" alt="Course"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+                  <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors duration-200">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD L6 -->
+          <div class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/CoursesPage/6.svg" alt="Course"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+                 <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors duration-200">View More</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end list view -->
+
+        <!-- GRID VIEW -->
+        <div id="grid-view" class="grid-cols-2 gap-5">
+
+          <!-- CARD G1 -->
+          <div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="padding-top: 60%;">
+              <img src="./assets/imgs/CoursesPage/1.svg" alt="Course"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+                  <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD G2 -->
+          <div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="padding-top: 60%;">
+              <img src="./assets/imgs/CoursesPage/2.svg" alt="Course"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+                  <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD G3 -->
+          <div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="padding-top: 60%;">
+              <img src="./assets/imgs/CoursesPage/3.svg" alt="Course"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+                 <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span> </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD G4 -->
+          <div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="padding-top: 60%;">
+              <img src="./assets/imgs/CoursesPage/4.svg" alt="Course"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+                  <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span>
+            </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD G5 -->
+          <div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="padding-top: 60%;">
+              <img src="./assets/imgs/CoursesPage/5.svg" alt="Course"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+                 <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span>
+             </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors">View More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD G6 -->
+          <div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+            <div class="relative w-full overflow-hidden" style="padding-top: 60%;">
+              <img src="./assets/imgs/CoursesPage/6.svg" alt="Course"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <p class="text-xs text-gray-400 mb-1">by Determined-Poitras</p>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Create An LMS Website With LearnPress</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-gray-500 mb-4">
+                 <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/clock.svg" alt="2 Weeks" class="w-3 h-3"/>
+                2 Weeks
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Students.svg" alt="156 Students" class="w-3 h-3"/>
+                156 Students
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/All levels.svg" alt="All levels" class="w-3 h-3"/>
+                All levels
+              </span>
+
+              <span class="flex items-center gap-1">
+                <img src="./assets/imgs/CoursesPage/Lessons.svg" alt="20 Lessons" class="w-3 h-3"/>
+                20 Lessons
+              </span>
+              </div>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-gray-400 line-through text-sm">$29.0</span>
+                  <span class="text-green-500 font-semibold text-sm">Free</span>
+                </div>
+                <button class="text-sm font-medium text-gray-700 group-hover:text-orange-500 transition-colors">View More</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end grid view -->
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12 gap-2">
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">‹</button>
+          <button class="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm cursor-pointer">1</button>
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors text-sm cursor-pointer">2</button>
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors text-sm cursor-pointer">3</button>
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">›</button>
+        </div>
+
+      </div><!-- end main content -->
+
+  <aside class="w-full lg:w-64 lg:min-w-64">
+
+  <div class="mb-7">
+    <h3 class="font-bold text-base text-gray-900 mb-4">Course Category</h3>
+    <ul class="space-y-2.5 text-sm">
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Commercial <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Office <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Shop <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Educate <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Academy <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Single family home <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Studio <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            University <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="mb-7">
+    <h3 class="font-bold text-base text-gray-900 mb-4">Instructors</h3>
+    <ul class="space-y-2.5 text-sm">
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Kenny White <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            John Doe <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="mb-7">
+    <h3 class="font-bold text-base text-gray-900 mb-4">Price</h3>
+    <ul class="space-y-2.5 text-sm">
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            All <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Free <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Paid <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="mb-7">
+    <h3 class="font-bold text-base text-gray-900 mb-4">Review</h3>
+    <ul class="space-y-2.5 text-sm">
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold">
+            <span class="text-amber-400">★★★★★</span> <span class="peer-checked:font-semibold text-black text-xs">(1,025)</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold">
+            <span class="flex gap-0.5"><span class="text-amber-400">★★★★</span><span class="text-gray-300">★</span></span>
+            <span class="peer-checked:font-semibold text-black text-xs">(1,025)</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold">
+            <span class="flex gap-0.5"><span class="text-amber-400">★★★</span><span class="text-gray-300">★★</span></span>
+            <span class="peer-checked:font-semibold text-black text-xs">(1,025)</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold">
+            <span class="flex gap-0.5"><span class="text-amber-400">★★</span><span class="text-gray-300">★★★</span></span>
+            <span class="peer-checked:font-semibold text-black text-xs">(1,025)</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold">
+            <span class="flex gap-0.5"><span class="text-amber-400">★</span><span class="text-gray-300">★★★★</span></span>
+            <span class="peer-checked:font-semibold text-black text-xs">(1,025)</span>
+          </span>
+        </label>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="mb-7">
+    <h3 class="font-bold text-base text-gray-900 mb-4">Level</h3>
+    <ul class="space-y-2.5 text-sm">
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            All levels <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Beginner <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Intermidiate <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+      <li>
+        <label class="flex justify-between items-center cursor-pointer">
+          <input type="checkbox" class="peer accent-gray-600 w-4 h-4">
+          <span class="ml-2 flex justify-between w-full text-black peer-checked:font-semibold peer-checked:text-gray-900">
+            Expert <span class="peer-checked:font-semibold">15</span>
+          </span>
+        </label>
+      </li>
+
+    </ul>
+  </div>
+
+</aside>
+
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="bg-[#f5f5f5] pt-14 pb-6">
+
+  <div class="max-w-[1290px] mx-auto px-6">
+
+    <!-- Top Footer -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-300">
+
+      <!-- Logo & Description -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <img src="./assets/imgs/logo.svg" class="w-40 mb-4" alt="">
+        <p class="text-gray-600 leading-relaxed text-sm max-w-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <!-- Get Help -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Get Help</h3>
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Latest Articles</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Programs</h3>
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a href="#" class="hover:text-orange-500 transition">Art & Design</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Business</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">IT & Software</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Languages</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Programming</a></li>
+        </ul>
+      </div>
+
+     <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Contact Us</h3>
+
+        <ul class="space-y-3 text-gray-600 text-sm">
+
+          <li class="hover:text-orange-500 transition duration-300 cursor-pointer">
+            Address: 2321 New Design Str, Lorem Ipsum10 <br>
+            Hudson Yards, USA
+          </li>
+
+          <li>
+            <a href="tel:+12325005678988"
+              class="hover:text-orange-500 transition duration-300 hover:underline">
+              Tel: + (123) 2500-567-8988
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:supportlms@gmail.com"
+              class="hover:text-orange-500 transition duration-300 hover:underline">
+              Mail: supportlms@gmail.com
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex flex-wrap gap-4 mt-5">
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/facebook.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/pinterest.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/twitter.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/insta.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/youtube.svg" class="w-5 h-5" />
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="text-center text-sm text-gray-500 pt-6">
+      Copyright © 2024 LearnPress LMS | Powered by ThimPress
+    </div>
+
+  </div>
+
+  <!-- Scroll To Top -->
+  <button
+  class="fixed bottom-5 md:bottom-8 right-4 md:right-6
+         bg-black text-white
+         w-12 h-12 md:w-14 md:h-14
+         rounded-full
+         flex items-center justify-center
+         hover:bg-orange-500
+         transition
+         z-50">
+
+  <span class="text-xl md:text-2xl leading-none">↑</span>
+
+</button>
+
+</footer>
+
+</body>
+</html>
