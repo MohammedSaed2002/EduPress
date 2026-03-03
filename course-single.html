@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Single – EduPress</title>
+      <link href="./assets/css/output.css" rel="stylesheet">
+      
+<style>
+  /* TAB SYSTEM */
+  .tab-pane { display: none; }
+
+  #tab-ov:checked   ~ .tabs-wrap .tabs-content #pane-ov   { display: block; }
+  #tab-cu:checked   ~ .tabs-wrap .tabs-content #pane-cu   { display: block; }
+  #tab-ins:checked  ~ .tabs-wrap .tabs-content #pane-ins  { display: block; }
+  #tab-faq:checked  ~ .tabs-wrap .tabs-content #pane-faq  { display: block; }
+  #tab-rev:checked  ~ .tabs-wrap .tabs-content #pane-rev  { display: block; }
+
+  #tab-ov:checked   ~ .tabs-wrap .tabs-nav label[for="tab-ov"]  { color:#f97316; border-bottom-color:#f97316; }
+  #tab-cu:checked   ~ .tabs-wrap .tabs-nav label[for="tab-cu"]  { color:#f97316; border-bottom-color:#f97316; }
+  #tab-ins:checked  ~ .tabs-wrap .tabs-nav label[for="tab-ins"] { color:#f97316; border-bottom-color:#f97316; }
+  #tab-faq:checked  ~ .tabs-wrap .tabs-nav label[for="tab-faq"] { color:#f97316; border-bottom-color:#f97316; }
+  #tab-rev:checked  ~ .tabs-wrap .tabs-nav label[for="tab-rev"] { color:#f97316; border-bottom-color:#f97316; }
+
+  /* CURRICULUM ACCORDION */
+  .sec-body  { display: none; }
+  .sec-chk:checked ~ .sec-body  { display: block; }
+  .sec-chk:checked ~ .sec-head .sec-arr { transform: rotate(180deg); }
+  .sec-arr { transition: transform .25s; display: inline-block; }
+
+  /* FAQ ACCORDION */
+  .faq-body { display: none; }
+  .faq-chk:checked ~ .faq-body  { display: block; }
+  .faq-chk:checked ~ .faq-head .faq-arr { transform: rotate(180deg); }
+  .faq-arr { transition: transform .25s; display: inline-block; }
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="bg-white shadow-sm">
+
+  <div class="max-w-[1290px] mx-auto px-6">
+
+    <div class="h-[72px] flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img src="./assets/imgs/LOGO.svg" 
+             alt="EduPress Logo"
+             class="h-8 w-auto">
+      </a>
+
+     <!-- Links -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px]">
+        <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+        <a href="courses.html" class="hover:text-orange-500 transition">Courses</a>
+        <a href="Blog.html" class="hover:text-orange-500 transition">Blog</a>
+        <a href="Page.html" class="hover:text-orange-500 transition">Page</a>
+        <a href="LearnPress Add-On.html" class="hover:text-orange-500 transition">LearnPress Add-On</a>
+        <a href="Premium Theme.html" class="hover:text-orange-500 transition">Premium Theme</a>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-6">
+
+        <span class="hidden md:block hover:text-orange-500 cursor-pointer text-[15px]">
+          Login / Register
+        </span>
+
+        <!-- Search Icon -->
+        <img src="./assets/imgs/Search.svg"
+             alt="search"
+             class="w-12 h-12 cursor-pointer hover:scale-110 transition">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- BREADCRUMB -->
+<div class="bg-white border-b border-gray-200">
+  <div class="max-w-[1290px] mx-auto px-6 py-3 text-sm text-gray-500 flex items-center gap-1.5 flex-wrap">
+    <a href="index.html"   class="hover:text-orange-500 transition">Homepage</a>
+    <span class="text-gray-400">›</span>
+    <a href="courses.html" class="hover:text-orange-500 transition">Course</a>
+    <span class="text-gray-400">›</span>
+    <span class="text-gray-600">The Ultimate Guide To The Best WordPress LMS Plugin</span>
+  </div>
+</div>
+
+<!--HERO -->
+<div class="bg-black text-white relative">
+  <div class="max-w-[1290px] mx-auto px-6 pt-10 pb-16">
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+      <!-- Left: text -->
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-gray-600 text-white text-xs font-medium px-3 py-1 rounded">Photography</span>
+          <span class="text-sm text-gray-300">by <span class="text-white font-semibold">Determined-Poitras</span></span>
+        </div>
+        <h1 class="text-2xl lg:text-[28px] font-bold leading-snug mb-5">
+          The Ultimate Guide To The Best WordPress LMS Plugin
+        </h1>
+        <div class="flex flex-wrap gap-5 text-sm text-gray-300">
+          <span class="flex items-center gap-1.5">
+            <img src="./assets/imgs/Course-Single/weeks.svg" class="w-4 h-4" alt="Weeks">
+            2 Weeks
+          </span>
+          <span class="flex items-center gap-1.5">
+            <img src="./assets/imgs/Course-Single/students.svg" class="w-4 h-4" alt="Students">
+            156 Students
+          </span>
+          <span class="flex items-center gap-1.5">
+            <img src="./assets/imgs/Course-Single/all levels.svg" class="w-4 h-4" alt="All levels">
+            All levels
+          </span>
+          <span class="flex items-center gap-1.5">
+            <img src="./assets/imgs/Course-Single/lessons.svg" class="w-4 h-4" alt="Lessons">
+            20 Lessons
+          </span>
+          <span class="flex items-center gap-1.5">
+            <img src="./assets/imgs/Course-Single/quizzes.svg" class="w-4 h-4" alt="Quizzes">
+            3 Quizzes
+          </span>
+        </div>
+      </div>
+
+     <!-- Right: floating card -->
+      <div class="hidden lg:block w-[190px] flex-shrink-0">
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg" style="margin-bottom:-52px">
+          <div class="relative">
+            <span class="absolute top-1.5 left-1.5 z-10 bg-gray-700 text-white text-[10px] px-2 py-0.5 rounded">Photography</span>
+            <img src="./assets/imgs/CoursesPage/1.svg" alt="Course preview" class="w-full object-cover" style="height:110px">
+          </div>
+          <div class="px-2.5 py-1.5 text-center text-[11px] text-gray-500 border-b border-gray-100 leading-tight">
+            Create an LMS website<br>with LearnPress plugin
+          </div>
+          <div class="px-3 py-2 flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="text-gray-400 line-through text-xs">$59.0</span>
+              <span class="text-orange-500 font-bold text-base">$49.0</span>
+            </div>
+            <button class="bg-orange-500 hover:bg-orange-600 transition text-white text-xs font-semibold px-3 py-1.5 rounded-lg">
+              Start Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- TABS + CONTENT -->
+<div class="bg-gray-50 min-h-screen">
+  <div class="max-w-[1290px] mx-auto px-6 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+
+      <!-- ── LEFT: tabs ── -->
+      <div class="flex-1 min-w-0">
+
+        <!-- Hidden radio inputs — MUST be before .tabs-wrap -->
+        <input type="radio" name="ctab" id="tab-ov"  class="hidden" checked>
+        <input type="radio" name="ctab" id="tab-cu"  class="hidden">
+        <input type="radio" name="ctab" id="tab-ins" class="hidden">
+        <input type="radio" name="ctab" id="tab-faq" class="hidden">
+        <input type="radio" name="ctab" id="tab-rev" class="hidden">
+
+        <div class="tabs-wrap">
+
+          <!-- Tab nav -->
+          <div class="tabs-nav bg-white rounded-xl shadow-sm mb-5 overflow-hidden">
+            <div class="flex border-b border-gray-100">
+              <label for="tab-ov"
+                class="px-6 py-4 text-sm font-medium text-gray-600 cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:text-orange-500 transition -mb-px select-none">
+                Overview
+              </label>
+              <label for="tab-cu"
+                class="px-6 py-4 text-sm font-medium text-gray-600 cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:text-orange-500 transition -mb-px select-none">
+                Curriculum
+              </label>
+              <label for="tab-ins"
+                class="px-6 py-4 text-sm font-medium text-gray-600 cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:text-orange-500 transition -mb-px select-none">
+                Instructor
+              </label>
+              <label for="tab-faq"
+                class="px-6 py-4 text-sm font-medium text-gray-600 cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:text-orange-500 transition -mb-px select-none">
+                FAQs
+              </label>
+              <label for="tab-rev"
+                class="px-6 py-4 text-sm font-medium text-gray-600 cursor-pointer whitespace-nowrap border-b-2 border-transparent hover:text-orange-500 transition -mb-px select-none">
+                Reviews
+              </label>
+            </div>
+          </div>
+
+          <!-- Tab panels -->
+          <div class="tabs-content">
+
+            <!-- ── OVERVIEW ── -->
+            <div id="pane-ov" class="tab-pane">
+              <div class="bg-white rounded-xl shadow-sm p-6 mb-5">
+                <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                  LearnPress is a comprehensive WordPress LMS Plugin for WordPress. This is one of the best WordPress LMS Plugins which can be used to easily create &amp; sell courses online. You can create a course curriculum with lessons &amp; quizzes included which is managed with an easy-to-use interface for users. Having this WordPress LMS Plugin, now you have a chance to quickly and easily create education, online school, online-course websites with no coding knowledge required.
+                </p>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  LearnPress is free and always will be, but it is still a premium high-quality WordPress Plugin that definitely helps you with making money from your WordPress Based LMS. Just try and see how amazing it is. LearnPress WordPress Online Course plugin is lightweight and super powerful with lots of Add-Ons to empower its core system.How to use WPML Add-on for LearnPress?<br>
+                  No comments yet! You be the first to comment.
+                </p>
+              </div>
+            </div>
+
+            <!-- ── CURRICULUM ── -->
+            <div id="pane-cu" class="tab-pane">
+              <div class="bg-white rounded-xl shadow-sm p-6 mb-5">
+                <p class="text-sm text-gray-600 mb-5">
+                  LearnPress is a comprehensive WordPress LMS Plugin for WordPress. This is one of the best WordPress LMS Plugins which can be used to easily create &amp; sell courses online.
+                </p>
+                <div class="border border-gray-200 rounded-lg overflow-hidden divide-y divide-gray-200">
+
+                  <!-- Section 1 collapsed -->
+                  <div>
+                    <input type="checkbox" id="s1" class="sec-chk hidden">
+                    <label for="s1" class="sec-head flex items-center justify-between px-4 py-3.5 cursor-pointer hover:bg-gray-50 transition select-none">
+                      <div class="flex items-center gap-2 text-sm font-medium text-gray-800">
+                        <span class="sec-arr text-gray-400 text-xs">▾</span>
+                        Lessons With Video Content
+                      </div>
+                      <span class="text-xs text-gray-400">5 Lessons &nbsp; 45 Mins</span>
+                    </label>
+                    <div class="sec-body"></div>
+                  </div>
+
+                  <!-- Section 2 open (orange) -->
+                  <div>
+                    <input type="checkbox" id="s2" class="sec-chk hidden" checked>
+                    <label for="s2" class="sec-head flex items-center justify-between px-4 py-3.5 cursor-pointer hover:bg-gray-50 transition select-none">
+                      <div class="flex items-center gap-2 text-sm font-medium text-orange-500">
+                        <span class="sec-arr text-orange-400 text-xs">▾</span>
+                        Lessons With Video Content
+                      </div>
+                      <span class="text-xs text-gray-400">3 Lessons &nbsp; 45 Mins</span>
+                    </label>
+                    <div class="sec-body bg-gray-50 divide-y divide-gray-100">
+                      <!-- lesson 1 -->
+                      <div class="flex items-center justify-between px-8 py-2.5">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                          <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
+                          Lessons with video content
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <span class="bg-blue-500 text-white text-xs px-2.5 py-0.5 rounded">Preview</span>
+                          <span class="text-xs text-gray-400 w-8 text-right">12:30</span>
+                          <svg class="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                      </div>
+                      <!-- lesson 2 orange link -->
+                      <div class="flex items-center justify-between px-8 py-2.5">
+                        <div class="flex items-center gap-2 text-sm text-orange-500 hover:underline cursor-pointer">
+                          <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
+                          Lessons with video content
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <span class="bg-blue-500 text-white text-xs px-2.5 py-0.5 rounded">Preview</span>
+                          <span class="text-xs text-gray-400 w-8 text-right">10:05</span>
+                          <svg class="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                      </div>
+                      <!-- lesson 3 locked -->
+                      <div class="flex items-center justify-between px-8 py-2.5">
+                        <div class="flex items-center gap-2 text-sm text-gray-700">
+                          <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
+                          Lessons with video content
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <span class="bg-blue-500 text-white text-xs px-2.5 py-0.5 rounded">Preview</span>
+                          <span class="text-xs text-gray-400 w-8 text-right">2:25</span>
+                          <svg class="w-3.5 h-3.5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sections 3–5 collapsed -->
+                  <div>
+                    <input type="checkbox" id="s3" class="sec-chk hidden">
+                    <label for="s3" class="sec-head flex items-center justify-between px-4 py-3.5 cursor-pointer hover:bg-gray-50 transition select-none">
+                      <div class="flex items-center gap-2 text-sm font-medium text-gray-800"><span class="sec-arr text-gray-400 text-xs">▾</span>Lessons With Video Content</div>
+                      <span class="text-xs text-gray-400">5 Lessons &nbsp; 45 Mins</span>
+                    </label>
+                    <div class="sec-body"></div>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="s4" class="sec-chk hidden">
+                    <label for="s4" class="sec-head flex items-center justify-between px-4 py-3.5 cursor-pointer hover:bg-gray-50 transition select-none">
+                      <div class="flex items-center gap-2 text-sm font-medium text-gray-800"><span class="sec-arr text-gray-400 text-xs">▾</span>Lessons With Video Content</div>
+                      <span class="text-xs text-gray-400">5 Lessons &nbsp; 45 Mins</span>
+                    </label>
+                    <div class="sec-body"></div>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="s5" class="sec-chk hidden">
+                    <label for="s5" class="sec-head flex items-center justify-between px-4 py-3.5 cursor-pointer hover:bg-gray-50 transition select-none">
+                      <div class="flex items-center gap-2 text-sm font-medium text-gray-800"><span class="sec-arr text-gray-400 text-xs">▾</span>Lessons With Video Content</div>
+                      <span class="text-xs text-gray-400">5 Lessons &nbsp; 45 Mins</span>
+                    </label>
+                    <div class="sec-body"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ── INSTRUCTOR ── -->
+            <div id="pane-ins" class="tab-pane">
+              <div class="bg-white rounded-xl shadow-sm p-6 mb-5">
+                <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl mb-5">
+                  <div class="w-20 h-20 rounded-xl bg-orange-500 flex-shrink-0 flex items-center justify-center shadow">
+                    <span class="text-white text-4xl font-bold leading-none">¶</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-base font-bold text-gray-900 mb-1.5">ThimPress</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                      LearnPress is a comprehensive WordPress LMS Plugin for WordPress. This is one of the best WordPress LMS Plugins which can be used to easily create &amp; sell courses online.
+                    </p>
+                    <div class="flex items-center gap-5 text-sm text-gray-500">
+                      <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M16 15a4 4 0 00-8 0v1h8v-1z"/></svg>
+                        156 Students
+                      </span>
+                      <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
+                        20 Lessons
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">
+                  LearnPress is a comprehensive WordPress LMS Plugin for WordPress. This is one of the best WordPress LMS Plugins which can be used to easily create &amp; sell courses online.
+                </p>
+                <div class="flex items-center gap-3">
+                  <span class="text-sm font-medium text-gray-700">Follow:</span>
+                  <a href="#" class="text-gray-500 hover:text-orange-500 transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-500 hover:text-orange-500 transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.772 0 3.135-1.869 3.135-4.57 0-2.387-1.716-4.057-4.165-4.057-2.837 0-4.5 2.128-4.5 4.33 0 .858.33 1.776.742 2.278a.3.3 0 01.069.286c-.076.314-.244.995-.277 1.134-.044.183-.146.222-.336.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S17.522 2 12 2z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-500 hover:text-orange-500 transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-500 hover:text-orange-500 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-500 hover:text-orange-500 transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── FAQs ── -->
+            <div id="pane-faq" class="tab-pane">
+              <div class="bg-white rounded-xl shadow-sm p-5 mb-5 space-y-2">
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                  <input type="checkbox" id="f1" class="faq-chk hidden">
+                  <label for="f1" class="faq-head flex items-center justify-between px-4 py-4 cursor-pointer hover:bg-gray-50 transition select-none">
+                    <span class="text-sm font-medium text-gray-800">What Does Royalty Free Mean?</span>
+                    <span class="faq-arr text-gray-400">▾</span>
+                  </label>
+                  <div class="faq-body px-4 pb-4 pt-3 text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis faucibus odio arcu duis dui.
+                  </div>
+                </div>
+
+                <div class="border border-orange-300 rounded-lg overflow-hidden">
+                  <input type="checkbox" id="f2" class="faq-chk hidden" checked>
+                  <label for="f2" class="faq-head flex items-center justify-between px-4 py-4 cursor-pointer hover:bg-orange-50 transition select-none">
+                    <span class="text-sm font-medium text-orange-500">What Does Royalty Free Mean?</span>
+                    <span class="faq-arr text-orange-400">▾</span>
+                  </label>
+                  <div class="faq-body px-4 pb-4 pt-3 text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in.
+                  </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                  <input type="checkbox" id="f3" class="faq-chk hidden">
+                  <label for="f3" class="faq-head flex items-center justify-between px-4 py-4 cursor-pointer hover:bg-gray-50 transition select-none">
+                    <span class="text-sm font-medium text-gray-800">What Does Royalty Free Mean?</span>
+                    <span class="faq-arr text-gray-400">▾</span>
+                  </label>
+                  <div class="faq-body px-4 pb-4 pt-3 text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                  <input type="checkbox" id="f4" class="faq-chk hidden">
+                  <label for="f4" class="faq-head flex items-center justify-between px-4 py-4 cursor-pointer hover:bg-gray-50 transition select-none">
+                    <span class="text-sm font-medium text-gray-800">What Does Royalty Free Mean?</span>
+                    <span class="faq-arr text-gray-400">▾</span>
+                  </label>
+                  <div class="faq-body px-4 pb-4 pt-3 text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ── REVIEWS ── -->
+            <div id="pane-rev" class="tab-pane">
+              <div class="bg-white rounded-xl shadow-sm p-6 mb-5">
+                <h3 class="font-bold text-gray-900 mb-5">Comments</h3>
+                <!-- Score -->
+                <div class="flex flex-col sm:flex-row items-start gap-6 mb-6">
+                  <div class="text-center flex-shrink-0">
+                    <div class="text-5xl font-bold text-gray-900 leading-none">4.0</div>
+                    <div class="text-amber-400 text-xl mt-2">★★★★☆</div>
+                    <div class="text-xs text-gray-400 mt-1 whitespace-nowrap">based on 146,951 ratings</div>
+                  </div>
+                  <div class="flex-1 w-full space-y-2 pt-2">
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="text-amber-400 w-[72px] text-right shrink-0">★★★★★</span>
+                      <div class="flex-1 bg-gray-200 rounded-full h-1.5"><div class="bg-amber-400 h-1.5 rounded-full" style="width:90%"></div></div>
+                      <span class="text-gray-500 w-7 text-right shrink-0">90%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="flex justify-end w-[72px] shrink-0"><span class="text-amber-400">★★★★</span><span class="text-gray-300">★</span></span>
+                      <div class="flex-1 bg-gray-200 rounded-full h-1.5"><div class="bg-amber-400 h-1.5 rounded-full" style="width:5%"></div></div>
+                      <span class="text-gray-500 w-7 text-right shrink-0">5%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="flex justify-end w-[72px] shrink-0"><span class="text-amber-400">★★★</span><span class="text-gray-300">★★</span></span>
+                      <div class="flex-1 bg-gray-200 rounded-full h-1.5"><div class="bg-amber-400 h-1.5 rounded-full" style="width:2%"></div></div>
+                      <span class="text-gray-500 w-7 text-right shrink-0">2%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="flex justify-end w-[72px] shrink-0"><span class="text-amber-400">★★</span><span class="text-gray-300">★★★</span></span>
+                      <div class="flex-1 bg-gray-200 rounded-full h-1.5"><div class="bg-amber-400 h-1.5 rounded-full" style="width:2%"></div></div>
+                      <span class="text-gray-500 w-7 text-right shrink-0">2%</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs">
+                      <span class="flex justify-end w-[72px] shrink-0"><span class="text-amber-400">★</span><span class="text-gray-300">★★★★</span></span>
+                      <div class="flex-1 bg-gray-200 rounded-full h-1.5"><div class="bg-amber-400 h-1.5 rounded-full" style="width:1%"></div></div>
+                      <span class="text-gray-500 w-7 text-right shrink-0">1%</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Reviews list -->
+                <div class="divide-y divide-gray-100">
+                  <div class="py-5 flex gap-3">
+                    <div class="w-9 h-9 rounded-full bg-gray-300 flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">LH</div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-sm font-semibold text-gray-900">Laura Hipster</span>
+                        <span class="text-xs text-gray-400">October 03, 2022</span>
+                      </div>
+                      <p class="text-sm text-gray-600 leading-relaxed mb-2">Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in. Pulvinar sit ultrices mi ut eleifend luctus ut. Id sed faucibus bibendum augue id cras purus. At eget euismod cursus non. Molestie dignissim sed volutpat feugiat vel.</p>
+                      <button class="text-xs text-gray-400 hover:text-orange-500 transition flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Reply
+                      </button>
+                    </div>
+                  </div>
+                  <div class="py-5 flex gap-3">
+                    <div class="w-9 h-9 rounded-full bg-gray-300 flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">LH</div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-sm font-semibold text-gray-900">Laura Hipster</span>
+                        <span class="text-xs text-gray-400">October 03, 2022</span>
+                      </div>
+                      <p class="text-sm text-gray-600 leading-relaxed mb-2">Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in. Pulvinar sit ultrices mi ut eleifend luctus ut. Id sed faucibus bibendum augue id cras purus. At eget euismod cursus non. Molestie dignissim sed volutpat feugiat vel.</p>
+                      <button class="text-xs text-gray-400 hover:text-orange-500 transition flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Reply
+                      </button>
+                    </div>
+                  </div>
+                  <div class="py-5 flex gap-3">
+                    <div class="w-9 h-9 rounded-full bg-gray-300 flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">LH</div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-sm font-semibold text-gray-900">Laura Hipster</span>
+                        <span class="text-xs text-gray-400">October 03, 2022</span>
+                      </div>
+                      <p class="text-sm text-gray-600 leading-relaxed mb-2">Quisque nec non amet quis. Varius tellus justo odio parturient mauris curabitur lorem in. Pulvinar sit ultrices mi ut eleifend luctus ut. Id sed faucibus bibendum augue id cras purus. At eget euismod cursus non. Molestie dignissim sed volutpat feugiat vel.</p>
+                      <button class="text-xs text-gray-400 hover:text-orange-500 transition flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Reply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pagination -->
+                <div class="flex justify-center gap-1.5 mt-5 pt-4 border-t border-gray-100">
+                  <button class="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-100 transition text-xs">‹</button>
+                  <button class="w-7 h-7 rounded-full bg-orange-500 text-white flex items-center justify-center text-xs font-medium">1</button>
+                  <button class="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition text-xs">2</button>
+                  <button class="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition text-xs">3</button>
+                  <button class="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-100 transition text-xs">›</button>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /tabs-content -->
+        </div><!-- /tabs-wrap -->
+
+        <!-- ══ LEAVE A COMMENT ══ -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-10">
+          <h3 class="text-base font-bold text-gray-900 mb-1">Leave A Comment</h3>
+          <p class="text-xs text-gray-400 mb-5">Your email address will not be published. Required fields are marked *</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-4">
+            <input type="text" placeholder="Name*"
+              class="flex-1 border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400 transition placeholder-gray-400 bg-white">
+            <input type="email" placeholder="Email*"
+              class="flex-1 border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400 transition placeholder-gray-400 bg-white">
+          </div>
+          <textarea placeholder="Comment" rows="5"
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400 transition placeholder-gray-400 resize-none mb-4 bg-white"></textarea>
+          <label class="flex items-center gap-2 text-xs text-gray-500 mb-5 cursor-pointer select-none">
+            <input type="checkbox" class="accent-orange-500 w-3.5 h-3.5">
+            Save my name, email in this brower for the next time I comment
+          </label>
+          <button class="bg-orange-500 hover:bg-orange-600 active:scale-95 transition text-white text-sm font-semibold px-6 py-2.5 rounded-lg cursor-pointer">
+            Posts Comment
+          </button>
+        </div>
+
+      </div><!-- /left column -->
+
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-[#f5f5f5] pt-14 pb-6">
+
+  <div class="max-w-[1290px] mx-auto px-6">
+
+    <!-- Top Footer -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-300">
+
+      <!-- Logo & Description -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <img src="./assets/imgs/logo.svg" class="w-40 mb-4" alt="">
+        <p class="text-gray-600 leading-relaxed text-sm max-w-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <!-- Get Help -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Get Help</h3>
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Latest Articles</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Programs</h3>
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a href="#" class="hover:text-orange-500 transition">Art & Design</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Business</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">IT & Software</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Languages</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Programming</a></li>
+        </ul>
+      </div>
+
+     <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Contact Us</h3>
+
+        <ul class="space-y-3 text-gray-600 text-sm">
+
+          <li class="hover:text-orange-500 transition duration-300 cursor-pointer">
+            Address: 2321 New Design Str, Lorem Ipsum10 <br>
+            Hudson Yards, USA
+          </li>
+
+          <li>
+            <a href="tel:+12325005678988"
+              class="hover:text-orange-500 transition duration-300 hover:underline">
+              Tel: + (123) 2500-567-8988
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:supportlms@gmail.com"
+              class="hover:text-orange-500 transition duration-300 hover:underline">
+              Mail: supportlms@gmail.com
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex flex-wrap gap-4 mt-5">
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/facebook.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/pinterest.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/twitter.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/insta.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/youtube.svg" class="w-5 h-5" />
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="text-center text-sm text-gray-500 pt-6">
+      Copyright © 2024 LearnPress LMS | Powered by ThimPress
+    </div>
+
+  </div>
+
+  <!-- Scroll To Top -->
+  <button
+  class="fixed bottom-5 md:bottom-8 right-4 md:right-6
+         bg-black text-white
+         w-12 h-12 md:w-14 md:h-14
+         rounded-full
+         flex items-center justify-center
+         hover:bg-orange-500
+         transition
+         z-50">
+
+  <span class="text-xl md:text-2xl leading-none">↑</span>
+
+</button>
+
+</footer>
+
+</body>
+</html>
