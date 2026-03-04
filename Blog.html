@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPress-Blog</title>
+      <link href="./assets/css/output.css" rel="stylesheet">
+<style>
+    /* ── Default: list view visible ── */
+    #list-view { display: flex; flex-direction: column; gap: 1.25rem; }
+    #grid-view  { display: none; }
+
+    /* ── Grid radio checked ── */
+    #view-grid-radio:checked ~ section #grid-view { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    #view-grid-radio:checked ~ section #list-view  { display: none; }
+
+    #view-grid-radio:checked ~ section #btn-grid { background: #f97316; color: white; }
+    #view-grid-radio:checked ~ section #btn-list  { background: transparent; color: #6b7280; }
+
+    /* ── List radio checked ── */
+    #view-list-radio:checked ~ section #btn-list { background: #f97316; color: white; }
+    #view-list-radio:checked ~ section #btn-grid  { background: transparent; color: #6b7280; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="bg-white shadow-sm">
+
+  <div class="max-w-[1290px] mx-auto px-6">
+
+    <div class="h-[72px] flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img src="./assets/imgs/LOGO.svg" 
+             alt="EduPress Logo"
+             class="h-8 w-auto">
+      </a>
+
+     <!-- Links -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px]">
+        <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+        <a href="courses.html" class="hover:text-orange-500 transition">Courses</a>
+        <a href="Blog.html" class="hover:text-orange-500 transition">Blog</a>
+        <a href="Page.html" class="hover:text-orange-500 transition">Page</a>
+        <a href="LearnPress Add-On.html" class="hover:text-orange-500 transition">LearnPress Add-On</a>
+        <a href="Premium Theme.html" class="hover:text-orange-500 transition">Premium Theme</a>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-6">
+
+        <span class="hidden md:block hover:text-orange-500 cursor-pointer text-[15px]">
+          Login / Register
+        </span>
+
+        <!-- Search Icon -->
+        <img src="./assets/imgs/Search.svg"
+             alt="search"
+             class="w-12 h-12 cursor-pointer hover:scale-110 transition">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- Breadcrumb -->
+<div class="bg-[#f5f5f5]">
+  <div class="max-w-[1290px] mx-auto px-6 py-6 text-sm text-gray-500">
+    Home / Blog
+  </div>
+</div>
+
+  <!-- ══ Radio inputs for CSS toggle ══ -->
+  <input type="radio" name="view" id="view-list-radio" class="hidden" checked>
+  <input type="radio" name="view" id="view-grid-radio" class="hidden">
+
+  <!-- MAIN SECTION -->
+  <section class="max-w-[1290px] mx-auto px-6 pb-16">
+    <div class="flex gap-8 flex-col lg:flex-row">
+
+      <!-- MAIN CONTENT -->
+      <div class="flex-1 min-w-0">
+
+        <!-- Header row -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <h2 class="text-2xl font-bold text-gray-900">All Articles</h2>
+          <div class="flex items-center gap-3">
+            <!-- Search -->
+            <div class="relative">
+              <input type="text" placeholder="Search..."
+                class="border border-gray-300 rounded-lg pl-4 pr-10 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-400 bg-white">
+              <img src="./assets/imgs/CoursesPage/search.svg"
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-60">
+            </div>
+            <!-- View toggle -->
+            <div class="flex border border-gray-300 rounded-lg overflow-hidden">
+              <label for="view-list-radio" id="btn-list"
+                class="px-3 py-2 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors cursor-pointer flex items-center">
+                <img src="./assets/imgs/CoursesPage/list.svg" class="w-4 h-4" alt="List view">
+              </label>
+              <label for="view-grid-radio" id="btn-grid"
+                class="px-3 py-2 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors cursor-pointer flex items-center">
+                <img src="./assets/imgs/CoursesPage/grid.svg" class="w-4 h-4" alt="Grid view">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ LIST VIEW ══ -->
+        <div id="list-view">
+
+          <!-- CARD L1 -->
+          <a href="blog-single.html" class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/BlogPage/1.svg" alt="Article"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Best LearnPress WordPress Theme Collection For 2023</h3>
+                <div class="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                  <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Jan 24, 2023
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme? Online education...</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD L2 -->
+          <a href="blog-single.html" class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/BlogPage/2.svg" alt="Article"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Best LearnPress WordPress Theme Collection For 2023</h3>
+                <div class="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                  <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Jan 24, 2023
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme? Online education...</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD L3 -->
+          <a href="blog-single.html" class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/BlogPage/3.svg" alt="Article"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Best LearnPress WordPress Theme Collection For 2023</h3>
+                <div class="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                  <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Jan 24, 2023
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme? Online education...</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD L4 -->
+          <a href="blog-single.html" class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/BlogPage/4.svg" alt="Article"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Best LearnPress WordPress Theme Collection For 2023</h3>
+                <div class="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                  <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Jan 24, 2023
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme? Online education...</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD L5 -->
+          <a href="blog-single.html" class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/BlogPage/5.svg" alt="Article"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Best LearnPress WordPress Theme Collection For 2023</h3>
+                <div class="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                  <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Jan 24, 2023
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme? Online education...</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- CARD L6 -->
+          <a href="blog-single.html" class="group flex flex-col sm:flex-row bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative sm:w-64 sm:min-w-64 h-48 sm:h-auto overflow-hidden self-stretch">
+              <img src="./assets/imgs/BlogPage/6.svg" alt="Article"
+                   class="w-full h-full object-cover sm:absolute sm:inset-0 group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h3 class="font-semibold text-base text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">Best LearnPress WordPress Theme Collection For 2023</h3>
+                <div class="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
+                  <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Jan 24, 2023
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme? Online education...</p>
+              </div>
+            </div>
+          </a>
+
+        </div><!-- /list-view -->
+
+        <!-- ══ GRID VIEW ══ -->
+        <div id="grid-view">
+
+          <!-- CARD G1 -->
+          <a href="blog-single.html" class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative w-full overflow-hidden" style="padding-top:60%">
+              <img src="./assets/imgs/BlogPage/1.svg" alt="Article"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col gap-2">
+              <h3 class="font-semibold text-base text-gray-900 group-hover:text-orange-500 transition-colors duration-200 line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</h3>
+              <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jan 24, 2023
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme?...</p>
+            </div>
+          </a>
+
+          <!-- CARD G2 -->
+          <a href="blog-single.html" class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative w-full overflow-hidden" style="padding-top:60%">
+              <img src="./assets/imgs/BlogPage/2.svg" alt="Article"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col gap-2">
+              <h3 class="font-semibold text-base text-gray-900 group-hover:text-orange-500 transition-colors duration-200 line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</h3>
+              <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jan 24, 2023
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme?...</p>
+            </div>
+          </a>
+
+          <!-- CARD G3 -->
+          <a href="blog-single.html" class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative w-full overflow-hidden" style="padding-top:60%">
+              <img src="./assets/imgs/BlogPage/3.svg" alt="Article"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col gap-2">
+              <h3 class="font-semibold text-base text-gray-900 group-hover:text-orange-500 transition-colors duration-200 line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</h3>
+              <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jan 24, 2023
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme?...</p>
+            </div>
+          </a>
+
+          <!-- CARD G4 -->
+          <a href="blog-single.html" class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative w-full overflow-hidden" style="padding-top:60%">
+              <img src="./assets/imgs/BlogPage/4.svg" alt="Article"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col gap-2">
+              <h3 class="font-semibold text-base text-gray-900 group-hover:text-orange-500 transition-colors duration-200 line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</h3>
+              <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jan 24, 2023
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme?...</p>
+            </div>
+          </a>
+
+          <!-- CARD G5 -->
+          <a href="blog-single.html" class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative w-full overflow-hidden" style="padding-top:60%">
+              <img src="./assets/imgs/BlogPage/5.svg" alt="Article"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col gap-2">
+              <h3 class="font-semibold text-base text-gray-900 group-hover:text-orange-500 transition-colors duration-200 line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</h3>
+              <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jan 24, 2023
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme?...</p>
+            </div>
+          </a>
+
+          <!-- CARD G6 -->
+          <a href="blog-single.html" class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden no-underline">
+            <div class="relative w-full overflow-hidden" style="padding-top:60%">
+              <img src="./assets/imgs/BlogPage/6.svg" alt="Article"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-5 flex flex-col gap-2">
+              <h3 class="font-semibold text-base text-gray-900 group-hover:text-orange-500 transition-colors duration-200 line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</h3>
+              <div class="flex items-center gap-1.5 text-xs text-gray-400">
+                <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Jan 24, 2023
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed line-clamp-2">Looking for an amazing &amp; well-functional LearnPress WordPress Theme?...</p>
+            </div>
+          </a>
+
+        </div><!-- /grid-view -->
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12 gap-2">
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">‹</button>
+          <button class="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm cursor-pointer">1</button>
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors text-sm cursor-pointer">2</button>
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors text-sm cursor-pointer">3</button>
+          <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">›</button>
+        </div>
+
+      </div><!-- /main content -->
+
+      <!-- SIDEBAR -->
+      <aside class="w-full lg:w-64 lg:min-w-64">
+
+        <!-- Category -->
+          <div class="mb-7">
+            <h3 class="font-bold text-base text-gray-900 mb-4">Category</h3>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex justify-between text-gray-700 hover:text-black transition-colors cursor-pointer"><span>Commercial</span><span>15</span></li>
+              <li class="flex justify-between text-gray-700 hover:text-black transition-colors cursor-pointer"><span>Office</span><span>15</span></li>
+              <li class="flex justify-between text-gray-700 hover:text-black transition-colors cursor-pointer"><span>Shop</span><span>15</span></li>
+              <li class="flex justify-between text-gray-700 hover:text-black transition-colors cursor-pointer"><span>Educate</span><span>15</span></li>
+              <li class="flex justify-between text-gray-700 hover:text-black transition-colors cursor-pointer"><span>Academy</span><span>15</span></li>
+              <li class="flex justify-between text-gray-700 hover:text-black transition-colors cursor-pointer"><span>Single family home</span><span>15</span></li>
+            </ul>
+          </div>
+
+        <!-- Recent Posts -->
+        <div class="mb-7">
+          <h3 class="font-bold text-base text-gray-900 mb-4">Recent Posts</h3>
+          <div class="space-y-4">
+
+            <a href="blog-single.html" class="group flex gap-3 items-start no-underline">
+              <div class="w-16 h-14 rounded-lg overflow-hidden shrink-0">
+                <img src="./assets/imgs/BlogPage/Best LearnPress 1.svg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-800 leading-snug group-hover:text-orange-500 transition-colors line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</p>
+                <p class="text-[11px] text-gray-400 mt-1">Jan 24, 2023</p>
+              </div>
+            </a>
+
+            <a href="blog-single.html" class="group flex gap-3 items-start no-underline">
+              <div class="w-16 h-14 rounded-lg overflow-hidden shrink-0">
+                <img src="./assets/imgs/BlogPage/Best LearnPress 2.svg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-800 leading-snug group-hover:text-orange-500 transition-colors line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</p>
+                <p class="text-[11px] text-gray-400 mt-1">Jan 24, 2023</p>
+              </div>
+            </a>
+
+            <a href="blog-single.html" class="group flex gap-3 items-start no-underline">
+              <div class="w-16 h-14 rounded-lg overflow-hidden shrink-0">
+                <img src="./assets/imgs/BlogPage/Best LearnPress 3.svg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-800 leading-snug group-hover:text-orange-500 transition-colors line-clamp-2">Best LearnPress WordPress Theme Collection For 2023</p>
+                <p class="text-[11px] text-gray-400 mt-1">Jan 24, 2023</p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="mb-7">
+          <h3 class="font-bold text-base text-gray-900 mb-4">Tags</h3>
+          <div class="flex flex-wrap gap-2">
+            <a href="#" class="px-3.5 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-600 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">Free courses</a>
+            <a href="#" class="px-3.5 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-600 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">Marketing</a>
+            <a href="#" class="px-3.5 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-600 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">Idea</a>
+            <a href="#" class="px-3.5 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-600 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">LMS</a>
+            <a href="#" class="px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-medium text-blue-600 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">LearnPress</a>
+            <a href="#" class="px-3.5 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-600 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">Instructor</a>
+          </div>
+        </div>
+
+      </aside><!-- /sidebar -->
+
+    </div>
+  </section>
+
+
+<!-- Footer -->
+<footer class="bg-[#f5f5f5] pt-14 pb-6">
+
+  <div class="max-w-[1290px] mx-auto px-6">
+
+    <!-- Top Footer -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-300">
+
+      <!-- Logo & Description -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <img src="./assets/imgs/logo.svg" class="w-40 mb-4" alt="">
+        <p class="text-gray-600 leading-relaxed text-sm max-w-sm">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <!-- Get Help -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Get Help</h3>
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Latest Articles</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Programs</h3>
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a href="#" class="hover:text-orange-500 transition">Art & Design</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Business</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">IT & Software</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Languages</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition">Programming</a></li>
+        </ul>
+      </div>
+
+     <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-5 uppercase text-sm">Contact Us</h3>
+
+        <ul class="space-y-3 text-gray-600 text-sm">
+
+          <li class="hover:text-orange-500 transition duration-300 cursor-pointer">
+            Address: 2321 New Design Str, Lorem Ipsum10 <br>
+            Hudson Yards, USA
+          </li>
+
+          <li>
+            <a href="tel:+12325005678988"
+              class="hover:text-orange-500 transition duration-300 hover:underline">
+              Tel: + (123) 2500-567-8988
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:supportlms@gmail.com"
+              class="hover:text-orange-500 transition duration-300 hover:underline">
+              Mail: supportlms@gmail.com
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex flex-wrap gap-4 mt-5">
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/facebook.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/pinterest.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/twitter.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/insta.svg" class="w-5 h-5" />
+          </a>
+
+          <a href="#" class="hover:opacity-70 transition">
+            <img src="./assets/imgs/youtube.svg" class="w-5 h-5" />
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="text-center text-sm text-gray-500 pt-6">
+      Copyright © 2024 LearnPress LMS | Powered by ThimPress
+    </div>
+
+  </div>
+
+  <!-- Scroll To Top -->
+  <button
+  class="fixed bottom-5 md:bottom-8 right-4 md:right-6
+         bg-black text-white
+         w-12 h-12 md:w-14 md:h-14
+         rounded-full
+         flex items-center justify-center
+         hover:bg-orange-500
+         transition
+         z-50">
+
+  <span class="text-xl md:text-2xl leading-none">↑</span>
+
+</button>
+
+</footer>
+
+</body>
+</html>
