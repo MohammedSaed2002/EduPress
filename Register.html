@@ -73,9 +73,9 @@
 
       <!-- Right Side -->
       <div class="flex items-center gap-6">
-        <a href="Register.html" class="hidden md:block hover:text-orange-500 cursor-pointer text-[15px]">
-          Login / Register
-        </a>
+      <a href="Register.html" class="hidden md:block hover:text-orange-500 cursor-pointer text-[15px]">
+        Login / Register
+      </a>
         <img src="./assets/imgs/Search.svg" alt="search" class="w-12 h-12 cursor-pointer hover:scale-110 transition">
       </div>
 
@@ -83,100 +83,86 @@
   </div>
 </header>
 
-
 <!-- Breadcrumb -->
 <div class="bg-[#f5f5f5] border-b border-gray-200">
   <div class="max-w-[1290px] mx-auto px-6 py-3 text-sm text-gray-500">
-    Homepage &rsaquo; Contact
+    Homepage &rsaquo; Login / Register
   </div>
 </div>
 
-<!-- Need A Direct Line + Map -->
+<!-- Login / Register Section -->
 <section class="py-14 bg-white">
   <div class="max-w-[1290px] mx-auto px-6">
-    <div class="flex flex-col lg:flex-row gap-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-      <!-- Left: Info -->
-      <div class="lg:w-[340px] shrink-0">
-        <h2 class="text-[22px] font-bold text-gray-900 mb-2">Need A Direct Line?</h2>
-        <p class="text-gray-500 text-sm leading-relaxed mb-8">
-          Cras massa et odio donec faucibus in. Vitae pretium
-          massa dolor ullamcorper lectus elit quam.
-        </p>
+      <!-- Login Card -->
+      <div class="bg-white border border-gray-200 rounded-xl p-8">
+        <h2 class="text-[22px] font-bold text-gray-900 mb-6">Login</h2>
 
-        <!-- Phone -->
-        <div class="flex items-center gap-4 mb-5">
-        <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center shrink-0">
-            <img src="./assets/imgs/ContactPage/phone.svg" alt="phone" class="w-32 h-32">
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Phone</p>
-            <p class="text-base font-bold text-gray-900">(123) 456 7890</p>
-        </div>
-        </div>
+        <div class="space-y-4">
 
-        <!-- Email -->
-        <div class="flex items-center gap-4">
-        <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center shrink-0">
-            <img src="./assets/imgs/ContactPage/email.svg" alt="email" class="w-32 h-32">
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Email</p>
-            <p class="text-base font-bold text-gray-900">contact@thimpress.com</p>
-        </div>
+          <input type="text" placeholder="Email or username*"
+            class="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition placeholder-gray-400">
+
+          <input type="password" placeholder="Password*"
+            class="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition placeholder-gray-400">
+
+          <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+            <input type="checkbox" class="accent-orange-500 w-4 h-4">
+            Remember me
+          </label>
+
+          <button class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-full transition duration-300">
+            Login
+          </button>
+
+          <p class="text-sm text-gray-600">
+            <a href="#" class="hover:text-orange-500 transition">Lost your password?</a>
+          </p>
+
         </div>
       </div>
 
-        <!-- Right: Map -->
-        <div class="flex-1 w-[850px] h-[450px] rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-        <img src="./assets/imgs/ContactPage/Map.svg" alt="map" class="w-full h-full object-cover">
+      <!-- Register Card -->
+      <div class="bg-white border border-gray-200 rounded-xl p-8">
+        <h2 class="text-[22px] font-bold text-gray-900 mb-6">Register</h2>
+
+        <div class="space-y-4">
+
+          <input type="email" placeholder="Email*"
+            class="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition placeholder-gray-400">
+
+          <input type="text" placeholder="Username*"
+            class="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition placeholder-gray-400">
+
+          <!-- Password -->
+          <div class="relative">
+            <input type="password" placeholder="Password*"
+              class="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition placeholder-gray-400 pr-10">
+            <span class="absolute right-3 top-1/2 -translate-y-1/2">
+              <img src="./assets/imgs/LoginRegisterPge/Vector.svg" alt="show password" class="w-5 h-5">
+            </span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="relative">
+            <input type="password" placeholder="Confirm Password*"
+              class="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition placeholder-gray-400 pr-10">
+            <span class="absolute right-3 top-1/2 -translate-y-1/2">
+              <img src="./assets/imgs/LoginRegisterPge/Vector.svg" alt="show password" class="w-5 h-5">
+            </span>
+          </div>
+
+          <button class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-full transition duration-300">
+            Register
+          </button>
+
         </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Contact Form -->
-<section class="pb-16 bg-white">
-  <div class="max-w-[1290px] mx-auto px-6">
-
-    <h2 class="text-[22px] font-bold text-gray-900 mb-1">Contact Us</h2>
-    <p class="text-gray-400 text-sm mb-7">
-      Your email address will not be published. Required fields are marked
-      <span class="text-orange-500">*</span>
-    </p>
-
-    <div class="space-y-4 ">
-
-      <!-- Name + Email -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input type="text" placeholder="Name*"
-          class="border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition w-full placeholder-gray-400">
-        <input type="email" placeholder="Email*"
-          class="border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition w-full placeholder-gray-400">
-      </div>
-
-      <!-- Comment -->
-      <textarea rows="5" placeholder="Comment"
-        class="border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-orange-400 transition w-full resize-none placeholder-gray-400"></textarea>
-
-      <!-- Checkbox -->
-      <label class="flex items-center gap-2 text-sm text-gray-500 cursor-pointer select-none">
-        <input type="checkbox" class="accent-orange-500 w-4 h-4">
-        Save my name, email in this browser for the next time I comment
-      </label>
-
-      <!-- Submit -->
-      <div>
-        <button class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-7 py-2.5 rounded-full transition duration-300 shadow-sm">
-          Post Comment
-        </button>
       </div>
 
     </div>
   </div>
 </section>
-
 
 <!-- Footer -->
 <footer class="bg-[#f5f5f5] pt-14 pb-6">
