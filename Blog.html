@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduPress-Blog</title>
-      <link href="./assets/css/output.css" rel="stylesheet">
-<style>
-    /* ── Default: list view visible ── */
-    #list-view { display: flex; flex-direction: column; gap: 1.25rem; }
-    #grid-view  { display: none; }
+     <link href="./assets/css/output.css" rel="stylesheet">
+    <style>
+        a, button, .cursor-pointer,
+        .group, [onclick] {
+            cursor: pointer !important;
+        }
 
-    /* ── Grid radio checked ── */
-    #view-grid-radio:checked ~ section #grid-view { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-    #view-grid-radio:checked ~ section #list-view  { display: none; }
+        /* ── Default: list view visible ── */
+        #list-view { display: flex; flex-direction: column; gap: 1.25rem; }
+        #grid-view  { display: none; }
 
-    #view-grid-radio:checked ~ section #btn-grid { background: #f97316; color: white; }
-    #view-grid-radio:checked ~ section #btn-list  { background: transparent; color: #6b7280; }
+        /* ── Grid radio checked ── */
+        #view-grid-radio:checked ~ section #grid-view { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+        #view-grid-radio:checked ~ section #list-view  { display: none; }
 
-    /* ── List radio checked ── */
-    #view-list-radio:checked ~ section #btn-list { background: #f97316; color: white; }
-    #view-list-radio:checked ~ section #btn-grid  { background: transparent; color: #6b7280; }
-  </style>
+        #view-grid-radio:checked ~ section #btn-grid { background: #f97316; color: white; }
+        #view-grid-radio:checked ~ section #btn-list  { background: transparent; color: #6b7280; }
+
+        /* ── List radio checked ── */
+        #view-list-radio:checked ~ section #btn-list { background: #f97316; color: white; }
+        #view-list-radio:checked ~ section #btn-grid  { background: transparent; color: #6b7280; }
+      </style>
 </head>
 <body>
 

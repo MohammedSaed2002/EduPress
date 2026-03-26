@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Courses-EduPress</title>
   <link href="./assets/css/output.css" rel="stylesheet">
-
- <style>
+  <style>
+      a, button, .cursor-pointer,
+      .group, [onclick] {
+          cursor: pointer !important;
+      }
+  
   #list-view { display: flex; flex-direction: column; gap: 1.25rem; }
   #grid-view  { display: none; }
 
@@ -18,7 +22,7 @@
 
   #view-list-radio:checked ~ section #btn-list { background: #f97316; }
   #view-list-radio:checked ~ section #btn-grid  { background: transparent; color: #6b7280; }
-</style>
+  </style>
 
 </head>
 

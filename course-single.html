@@ -4,36 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Single – EduPress</title>
-      <link href="./assets/css/output.css" rel="stylesheet">
-      
-<style>
-  /* TAB SYSTEM */
-  .tab-pane { display: none; }
+    <link href="./assets/css/output.css" rel="stylesheet">
+    <style>
+        a, button, .cursor-pointer,
+        .group, [onclick] {
+            cursor: pointer !important;
+        }
+   
+      /* TAB SYSTEM */
+      .tab-pane { display: none; }
 
-  #tab-ov:checked   ~ .tabs-wrap .tabs-content #pane-ov   { display: block; }
-  #tab-cu:checked   ~ .tabs-wrap .tabs-content #pane-cu   { display: block; }
-  #tab-ins:checked  ~ .tabs-wrap .tabs-content #pane-ins  { display: block; }
-  #tab-faq:checked  ~ .tabs-wrap .tabs-content #pane-faq  { display: block; }
-  #tab-rev:checked  ~ .tabs-wrap .tabs-content #pane-rev  { display: block; }
+      #tab-ov:checked   ~ .tabs-wrap .tabs-content #pane-ov   { display: block; }
+      #tab-cu:checked   ~ .tabs-wrap .tabs-content #pane-cu   { display: block; }
+      #tab-ins:checked  ~ .tabs-wrap .tabs-content #pane-ins  { display: block; }
+      #tab-faq:checked  ~ .tabs-wrap .tabs-content #pane-faq  { display: block; }
+      #tab-rev:checked  ~ .tabs-wrap .tabs-content #pane-rev  { display: block; }
 
-  #tab-ov:checked   ~ .tabs-wrap .tabs-nav label[for="tab-ov"]  { color:#f97316; border-bottom-color:#f97316; }
-  #tab-cu:checked   ~ .tabs-wrap .tabs-nav label[for="tab-cu"]  { color:#f97316; border-bottom-color:#f97316; }
-  #tab-ins:checked  ~ .tabs-wrap .tabs-nav label[for="tab-ins"] { color:#f97316; border-bottom-color:#f97316; }
-  #tab-faq:checked  ~ .tabs-wrap .tabs-nav label[for="tab-faq"] { color:#f97316; border-bottom-color:#f97316; }
-  #tab-rev:checked  ~ .tabs-wrap .tabs-nav label[for="tab-rev"] { color:#f97316; border-bottom-color:#f97316; }
+      #tab-ov:checked   ~ .tabs-wrap .tabs-nav label[for="tab-ov"]  { color:#f97316; border-bottom-color:#f97316; }
+      #tab-cu:checked   ~ .tabs-wrap .tabs-nav label[for="tab-cu"]  { color:#f97316; border-bottom-color:#f97316; }
+      #tab-ins:checked  ~ .tabs-wrap .tabs-nav label[for="tab-ins"] { color:#f97316; border-bottom-color:#f97316; }
+      #tab-faq:checked  ~ .tabs-wrap .tabs-nav label[for="tab-faq"] { color:#f97316; border-bottom-color:#f97316; }
+      #tab-rev:checked  ~ .tabs-wrap .tabs-nav label[for="tab-rev"] { color:#f97316; border-bottom-color:#f97316; }
 
-  /* CURRICULUM ACCORDION */
-  .sec-body  { display: none; }
-  .sec-chk:checked ~ .sec-body  { display: block; }
-  .sec-chk:checked ~ .sec-head .sec-arr { transform: rotate(180deg); }
-  .sec-arr { transition: transform .25s; display: inline-block; }
+      /* CURRICULUM ACCORDION */
+      .sec-body  { display: none; }
+      .sec-chk:checked ~ .sec-body  { display: block; }
+      .sec-chk:checked ~ .sec-head .sec-arr { transform: rotate(180deg); }
+      .sec-arr { transition: transform .25s; display: inline-block; }
 
-  /* FAQ ACCORDION */
-  .faq-body { display: none; }
-  .faq-chk:checked ~ .faq-body  { display: block; }
-  .faq-chk:checked ~ .faq-head .faq-arr { transform: rotate(180deg); }
-  .faq-arr { transition: transform .25s; display: inline-block; }
-</style>
+      /* FAQ ACCORDION */
+      .faq-body { display: none; }
+      .faq-chk:checked ~ .faq-body  { display: block; }
+      .faq-chk:checked ~ .faq-head .faq-arr { transform: rotate(180deg); }
+      .faq-arr { transition: transform .25s; display: inline-block; }
+    </style>
 
 </head>
 <body>
